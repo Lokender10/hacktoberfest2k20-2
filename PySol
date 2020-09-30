@@ -1,0 +1,72 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'receivedText' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING S as parameter.
+#
+
+def receivedText(S):
+    # WRITE DOWN YOUR CODE HERE
+    s=list(S)
+    a=[]
+    e=[]
+    x=0
+    w=0
+    num="1234567890"
+    a.append(e)
+    for i in range(len(s)):
+        z=0
+        if s[i]=='*':
+            z=1
+            r=x
+            check=1
+            while len(a[r])==0:
+                r+=1
+                if r>=len(a):
+                    check=0
+                    break
+            if check==1:
+                del a[r][-1]
+        if s[i]=='>':
+            x=0
+            e=[]
+            a.insert(0,e)
+            z=1
+        if s[i]=='<':
+            e=[]
+            x=len(a)
+            z=1
+            a.append(e)
+        if s[i]=='#':
+            z=1
+            w+=1
+        if z!=1:
+            if w%2==1:
+                if s[i] not in num:
+                    a[x].append(s[i])
+            else:
+                a[x].append(s[i])
+    ans=""
+    for i in range(len(a)-1,-1,-1):
+        for j in range(len(a[i])):
+            ans+=str(a[i][j])
+    return ans
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    S = input()
+
+    result = receivedText(S)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
