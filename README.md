@@ -1,4 +1,4 @@
-# hacktoberfest2k20
+# hacktoberfest2k20 - till 31st oct
 
 ## Please help me with the given question below:
 
