@@ -24,9 +24,13 @@ Constraints:
 1<=|S|<=10^6
 
 String contains Latin letters, underscores, digits, and four special characters:
+
 1.**Home** key represented by '<'
+
 2.**End** key represented by '>'
+
 3.**Backspace** key represented by '*'
+
 4.**Numeric Lock** key represented by '#'
 
 Output Format
@@ -36,9 +40,11 @@ Print the text which your supervisor will receive.
 Sample Input 0
 
 HE*<LL>O
+
 Sample Output 0
 
 LLHO
+
 Explanation 0
 
 The first two letters will be written normally. So, the output is ***HE*** so far.
